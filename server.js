@@ -26,9 +26,7 @@ app.get("/api/hello", function (req, res) {
 
 app.get('/api/timestamp/:date', async function(req, res){
   try{
-    console.log(date);
     let date = new Date(req.params.date);
-    console.log(date);
     res.json({
       unix:date.getTime(),
       "utc" : date.toUTCString()
@@ -36,7 +34,6 @@ app.get('/api/timestamp/:date', async function(req, res){
   }
   catch(err){
     res.json({
-      msg: err.messsage
       "unix": null, 
       "utc" : "Invalid Date"
     })
