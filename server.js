@@ -36,6 +36,7 @@ app.get('/api/timestamp/:date', async function(req, res){
   }
   catch(err){
     res.json({
+      msg: err.messsage
       "unix": null, 
       "utc" : "Invalid Date"
     })
